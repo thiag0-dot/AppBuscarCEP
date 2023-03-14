@@ -1,14 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppBuscarCEP.View.EnderecoPorCEP">
+             x:Class="AppBuscarCEP.View.LogradouroPorBairro">
   <ContentPage.Content>
       <StackLayout>
             <StackLayout Orientation="Horizontal">
-                <SearchBar x:Name="txt_Cep" Placeholder="Qual o Seu endereço?"/>
-                <Button Text="Buscar" Clicked="Button_Clicked_1"/>
+                <SearchBar x:Name="txt_logradouro" Placeholder="Qual é a seu bairro?"/>
+                <Button Text="Buscar" Clicked="Button_Clicked"/>
             </StackLayout>
-          
-      </StackLayout>
+        </StackLayout>
   </ContentPage.Content>
 </ContentPage>

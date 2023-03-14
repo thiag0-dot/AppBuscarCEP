@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace AppBuscarCEP.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BairrosPorCidade : ContentPage
+    public partial class LogradouroPorBairro : ContentPage
     {
-        public BairrosPorCidade()
+        public LogradouroPorBairro()
         {
             InitializeComponent();
         }

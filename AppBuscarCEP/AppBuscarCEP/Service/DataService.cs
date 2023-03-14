@@ -76,26 +76,49 @@ namespace AppBuscarCEP.Service
             return arr_log;
         }
 
-        public static async Task<List<Logradouro>> GetCepByLogradouro(int CEP)
+        public static async Task<List<Cep>> GetCepByLogradouro(string logradouro)
         {
-            List<Logradouro> arr_cep = new List<Logradouro>();
+            List<Cep> arr_ceps = new List<Cep>();
+
             using (HttpClient client = new HttpClient())
             {
-                HttpResponseMessage response = await client.GetAsync("https://cep.metoda.com.br/cep/by-logradouro?logradouro=Rua" + arr_cep);
+                HttpResponseMessage response = await client.GetAsync("https://cep.metoda.com.br/cep/by-logradouro?logradouro=" + logradouro);
+                
                 if (response.IsSuccessStatusCode)
                 {
-                    string json = response.Content?.ReadAsStringAsync().Result;
-                    arr_cep = JsonConvert.DeserializeObject<List<Logradouro>>(json);
+                    string json = response.Content.ReadAsStringAsync().Result;
+                    
+                    arr_ceps = JsonConvert.DeserializeObject<List<Cep>>(json);
                 }
                 else
                 {
                     throw new Exception(response.RequestMessage.Content.ToString());
                 }
             }
-            return arr_cep;
+            return arr_ceps;
         }
 
-        
+        public static async Task<List<Cidade>> GetCidadeByUF(string UF)
+        {
+            List<Cidade> arr_cidade = new List<Cidade>();
+
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync("https://cep.metoda.com.br/cidade/by-uf?uf=" + UF);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string json = response.Content.ReadAsStringAsync().Result;
+                    arr_cidade = JsonConvert.DeserializeObject<List<Cidade>>(json);
+                }
+                else
+                {
+                    throw new Exception(response.RequestMessage.Content.ToString());
+                }
+            }
+
+            return arr_cidade;
+        }
 
     }
 }

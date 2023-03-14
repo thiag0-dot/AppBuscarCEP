@@ -10,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace AppBuscarCEP.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BairrosPorCidade : ContentPage
+    public partial class CepPorLogradouro : ContentPage
     {
-        public BairrosPorCidade()
+        public CepPorLogradouro()
         {
             InitializeComponent();
-        }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-
         }
     }
 }

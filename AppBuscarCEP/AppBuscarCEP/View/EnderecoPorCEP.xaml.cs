@@ -10,11 +10,21 @@ using Xamarin.Forms.Xaml;
 namespace AppBuscarCEP.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class EnderecoPorCEP : ContentView
+    public partial class EnderecoPorCEP : ContentPage
     {
         public EnderecoPorCEP()
         {
             InitializeComponent();
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
