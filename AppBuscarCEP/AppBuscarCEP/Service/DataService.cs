@@ -40,7 +40,7 @@ namespace AppBuscarCEP.Service
 
             using (HttpClient client = new HttpClient())
             {
-                HttpResponseMessage response = await client.GetAsync("https://cep.metoda.com.br/bairro/by-cidade?id=4874" + arr_bairros);
+                HttpResponseMessage response = await client.GetAsync("https://cep.metoda.com.br/bairro/by-cidade?id_cidade=" + arr_bairros);
 
                 if (response.IsSuccessStatusCode)
                 {
