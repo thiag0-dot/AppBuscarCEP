@@ -54,7 +54,7 @@ namespace AppBuscarCEP.View
             try
             {
                 Picker disparador = sender as Picker;
-
+                carregando.IsRunning = true;
                 Cidade cidade_selecionada = disparador.SelectedItem as Cidade;
                 
 
@@ -66,6 +66,10 @@ namespace AppBuscarCEP.View
             catch(Exception ex)
             {
                 await DisplayAlert("Erro", ex.Message, "Ok");
+            }
+            finally
+            {
+                carregando.IsRunning = false;
             }
         }
     }

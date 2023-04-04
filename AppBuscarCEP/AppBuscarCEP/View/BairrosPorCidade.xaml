@@ -25,9 +25,7 @@
                 <ListView.Header>
                     <Grid ColumnDefinitions="Auto, *, *" RowDefinitions="Auto">
                         <Label Grid.Row="0" Grid.Column="0" Text="Bairro"/>
-                        <Label Grid.Row="0" Grid.Column="1" Text="Logradouro"/>
-                        <Label Grid.Row="0" Grid.Column="2" Text="Cidade"/>
-                        <Label Grid.Row="0" Grid.Column="3" Text="UF"/>
+                        
                     </Grid>
                 </ListView.Header>
 
@@ -36,9 +34,7 @@
                         <ViewCell>
                             <Grid ColumnDefinitions="Auto, *, *, Auto" RowDefinitions="Auto">
                                 <Label Grid.Row="0" Grid.Column="0" Text="{Binding descricao_bairro}"/>
-                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding descricao}"/>
-                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding descricao}"/>
-                                <Label Grid.Row="0" Grid.Column="3" Text="{Binding UF}"/>
+                                
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

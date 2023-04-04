@@ -43,5 +43,10 @@ namespace AppBuscarCEP.View
         {
             Navigation.PushAsync(new LogradouroPorBairro());
         }
+
+        private void Button_Clicked_5(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
     }
 }

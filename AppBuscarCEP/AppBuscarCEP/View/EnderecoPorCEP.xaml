@@ -8,7 +8,33 @@
                 <SearchBar x:Name="txt_Cep" Placeholder="Qual o Seu endereço?"/>
                 <Button Text="Buscar" Clicked="Button_Clicked_1"/>
             </StackLayout>
-          
-      </StackLayout>
+
+            <ListView x:Name="lst_endereco">
+                <ListView.Header>
+                    <Grid ColumnDefinitions="*, *, *, *" RowDefinitions="Auto">
+                        <Label Grid.Row="0" Grid.Column="0" Text="CEP" />
+                        <Label Grid.Row="0" Grid.Column="1" Text="Rua" />
+                        <Label Grid.Row="0" Grid.Column="2" Text="Bairro" />
+                        <Label Grid.Row="0" Grid.Column="4" Text="Cidade" />
+                        <Label Grid.Row="0" Grid.Column="5" Text="UF" />
+                    </Grid>
+                </ListView.Header>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid ColumnDefinitions=" *, *, *, *" RowDefinitions="Auto">
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding CEP}" />
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding descricao}" />
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding descricao_bairro}" />
+                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding descricao_cidade}" />
+                                <Label Grid.Row="0" Grid.Column="3" Text="{Binding UF}" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ActivityIndicator x:Name="carregando" IsRunning="False" />
+        </StackLayout>
   </ContentPage.Content>
 </ContentPage>
